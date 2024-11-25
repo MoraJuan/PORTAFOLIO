@@ -142,7 +142,7 @@
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
-    <header class="fixed top-0 left-0 w-full bg-white bg-opacity-90 shadow-md z-50">
+    <header class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 bg-opacity-90 shadow-md z-50">
         <div class="container mx-auto flex justify-between items-center p-4">
             <h1 class="text-2xl font-bold">Juan Cruz Mora</h1>
             <nav>
@@ -152,8 +152,24 @@
                     <li><a class="hover:text-blue-500 transition-colors" href="#contact">Contacto</a></li>
                 </ul>
             </nav>
+            <!-- Botón de alternancia de modo oscuro -->
+            <button id="theme-toggle" class="ml-4 p-2 rounded focus:outline-none">
+                🌙
+            </button>
         </div>
     </header>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            // Cambiar el icono según el modo
+            if (document.body.classList.contains('dark')) {
+                themeToggle.textContent = '☀️';
+            } else {
+                themeToggle.textContent = '🌙';
+            }
+        });
+    </script>
     <section class="pt-20 py-12 bg-white fade-in" id="about">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-8 text-center">Sobre mí</h2>
@@ -172,7 +188,7 @@
                 <div class="w-full md:w-2/3">
                     <p class="text-lg mb-6 mt_4 text-left">
                             Me llamo Juan Cruz Mora, Estudiante de la Licenciatura en Sistemas de Información en la Facultad de Ciencias Exactas de la Universidad Nacional de San Juan.
-                            pasionado por el desarrollo de software, cuento con conocimientos en Python, C, Java, SQL y en distintos Frameworks. 
+                            Apasionado por el desarrollo de software, cuento con conocimientos en Python, C, Java, SQL y en distintos Frameworks. 
                             Busco oportunidades para aplicar y expandir mis habilidades en proyectos desafiantes.
                     </p>
                     <!-- Grid de tecnologías -->
