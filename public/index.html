@@ -4,6 +4,16 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Portafolio de Backend Developer</title>
+    <!-- Tailwind CSS Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {},
+            },
+            plugins: [],
+        }
+    </script>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
@@ -385,82 +395,81 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Sección de Contacto -->
-    <section class="py-12 bg-white dark:bg-gray-800 fade-in" id="contact">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-4 dark:text-white">Contacto</h2>
-            
-            <!-- Información de contacto -->
-            <div class="flex justify-center space-x-8 mb-8">
-                <a href="mailto:juancruzmora26@gmail.com" 
-                   class="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                    <i class="fas fa-envelope text-2xl mr-2"></i>
-                    <span>juancruzmora26@gmail.com</span>
-                </a>
-                <a href="https://www.linkedin.com/in/juan-cruz-mora-9b8332233/" 
-                   target="_blank"
-                   class="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                    <i class="fab fa-linkedin text-2xl mr-2"></i>
-                    <span>LinkedIn</span>
-                </a>
+        <section class="py-12 bg-white dark:bg-gray-800 fade-in" id="contact">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4 dark:text-white">Contacto</h2>
+                
+                <!-- Información de contacto -->
+                <div class="flex justify-center space-x-8 mb-8">
+                    <a href="mailto:juancruzmora26@gmail.com" 
+                       class="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                        <i class="fas fa-envelope text-2xl mr-2"></i>
+                        <span>juancruzmora26@gmail.com</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/juan-cruz-mora-9b8332233/" 
+                       target="_blank"
+                       class="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                        <i class="fab fa-linkedin text-2xl mr-2"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+
+                <!-- Formulario de contacto -->
+                <form action="https://formsubmit.co/juancruzmora26@gmail.com" method="POST" class="max-w-lg mx-auto">
+                    <!-- Redirección después del envío -->
+                    <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
+                    <!-- Asunto del mensaje -->
+                    <input type="hidden" name="_subject" value="Nuevo contacto desde Portfolio">
+                    <!-- Protección contra spam -->
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <div class="mb-4">
+                        <label class="block text-left text-gray-700 dark:text-gray-300" for="name">Nombre</label>
+                        <input class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-gray-200"
+                               id="name" 
+                               name="name" 
+                               placeholder="Tu nombre" 
+                               type="text" 
+                               required/>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-left text-gray-700 dark:text-gray-300" for="email">Correo Electrónico</label>
+                        <input class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-gray-200"
+                               id="email" 
+                               name="email" 
+                               placeholder="Tu correo electrónico" 
+                               type="email" 
+                               required/>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-left text-gray-700 dark:text-gray-300" for="message">Mensaje</label>
+                        <textarea class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-gray-200" 
+                                  id="message" 
+                                  name="message" 
+                                  placeholder="Tu mensaje" 
+                                  rows="4" 
+                                  required></textarea>
+                    </div>
+                    <button class="bg-blue-900 text-white px-4 py-2 rounded-lg hover:bg-blue-800 dark:bg-blue-700 dark:hover:bg-blue-600 transition-colors" 
+                            type="submit">Enviar</button>
+                </form>
             </div>
-
-            <!-- Formulario de contacto -->
-            <form action="https://formsubmit.co/juancruzmora26@gmail.com" method="POST" class="max-w-lg mx-auto">
-                <!-- Redirección después del envío -->
-                <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
-                <!-- Asunto del mensaje -->
-                <input type="hidden" name="_subject" value="Nuevo contacto desde Portfolio">
-                <!-- Protección contra spam -->
-                <input type="hidden" name="_captcha" value="false">
-
-                <div class="mb-4">
-                    <label class="block text-left text-gray-700 dark:text-gray-300" for="name">Nombre</label>
-                    <input class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-gray-200"
-                           id="name" 
-                           name="name" 
-                           placeholder="Tu nombre" 
-                           type="text" 
-                           required/>
-                </div>
-                <div class="mb-4">
-                    <label class="block text-left text-gray-700 dark:text-gray-300" for="email">Correo Electrónico</label>
-                    <input class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-gray-200"
-                           id="email" 
-                           name="email" 
-                           placeholder="Tu correo electrónico" 
-                           type="email" 
-                           required/>
-                </div>
-                <div class="mb-4">
-                    <label class="block text-left text-gray-700 dark:text-gray-300" for="message">Mensaje</label>
-                    <textarea class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-gray-200" 
-                              id="message" 
-                              name="message" 
-                              placeholder="Tu mensaje" 
-                              rows="4" 
-                              required></textarea>
-                </div>
-                <button class="bg-blue-900 text-white px-4 py-2 rounded-lg hover:bg-blue-800 dark:bg-blue-700 dark:hover:bg-blue-600 transition-colors" 
-                        type="submit">Enviar</button>
-            </form>
-        </div>
-    </section>
+        </section>
 
     <!-- Footer -->
-    <footer class="bg-blue-900 dark:bg-gray-800 text-white p-4 fade-in">
-        <div class="container mx-auto text-center">
-            <p>© 2024 Todos los derechos reservados.</p>
-            <div class="flex justify-center space-x-4 mt-2">
-                <a class="hover:text-gray-400" href="https://github.com/tu-usuario" target="_blank"><i class="fab fa-github"></i></a>
-                <a class="hover:text-gray-400" href="https://linkedin.com/in/juan-cruz-mora-9b8332233/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a class="hover:text-gray-400" href="https://twitter.com/tu_usuario" target="_blank"><i class="fab fa-twitter"></i></a>
+        <footer class="bg-blue-900 dark:bg-gray-800 text-white p-4 fade-in">
+            <div class="container mx-auto text-center">
+                <p>© 2024 Todos los derechos reservados.</p>
+                <div class="flex justify-center space-x-4 mt-2">
+                    <a class="hover:text-gray-400" href="https://github.com/tu-usuario" target="_blank"><i class="fab fa-github"></i></a>
+                    <a class="hover:text-gray-400" href="https://linkedin.com/in/juan-cruz-mora-9b8332233/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a class="hover:text-gray-400" href="https://twitter.com/tu_usuario" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
     <!-- JavaScript para alternar el modo oscuro -->
     <script>
