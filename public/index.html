@@ -1,0 +1,439 @@
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Portafolio de Backend Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .slide-up {
+            animation: slideUp 1s ease-in-out;
+        }
+        @keyframes slideUp {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .bounce {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-30px); }
+            60% { transform: translateY(-15px); }
+        }
+        .card-container {
+        perspective: 1000px;
+    }
+    
+    .card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+        cursor: pointer;
+    }
+    
+    .card-container:hover .card-inner {
+        transform: rotateY(180deg);
+    }
+    
+    .card-front, .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+    }
+    
+    .card-back {
+        transform: rotateY(180deg);
+        background-color: #1a365d;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+    }
+    .hover-bounce:hover {
+        animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-30px); }
+        60% { transform: translateY(-15px); }
+    }
+    
+    .profile-image-container {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        border-radius: 50%;
+        padding: 4px;
+        background: linear-gradient(45deg, #3B82F6, #60A5FA);
+    }
+
+    .profile-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        background: #fff;
+        padding: 4px;
+        transition: transform 0.3s ease;
+        /* Ensure image maintains original colors */
+        filter: none;
+    }
+
+    .profile-image-wrapper {
+        position: relative;
+        border-radius: 50%;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        /* Add background to prevent color bleed */
+        background: white;
+    }
+
+    .profile-image-container:hover .profile-image {
+        transform: scale(1.05);
+    }
+
+    .profile-image-container:hover::after {
+        opacity: 1;
+    }
+
+    .profile-image-container::after {
+        content: '';
+        position: absolute;
+        inset: -3px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, #3B82F6, #60A5FA);
+        filter: blur(15px);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+
+    @keyframes borderRotate {
+        from {
+            filter: hue-rotate(0deg);
+        }
+        to {
+            filter: hue-rotate(360deg);
+        }
+    }
+    
+
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <header class="fixed top-0 left-0 w-full bg-white bg-opacity-90 shadow-md z-50">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <h1 class="text-2xl font-bold">Juan Cruz Mora</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a class="hover:text-blue-500 transition-colors" href="#about">Sobre Mí</a></li>
+                    <li><a class="hover:text-blue-500 transition-colors" href="#projects">Proyectos</a></li>
+                    <li><a class="hover:text-blue-500 transition-colors" href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="pt-20 py-12 bg-white fade-in" id="about">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Sobre mí</h2>
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+                <!-- Imagen a la izquierda en desktop -->
+                <div class="profile-image-container">
+                    <div class="profile-image-wrapper">
+                        <img 
+                            src="/image/me.jpg" 
+                            alt="Juan Cruz Mora" 
+                            class="profile-image"
+                        />
+                    </div>
+                </div>
+                <!-- Contenido a la derecha -->
+                <div class="w-full md:w-2/3">
+                    <p class="text-lg mb-6 text-left">
+                        Me llamo Juan Cruz Mora, Estudiante de la Licenciatura en Sistemas de Información en la Facultad de Ciencias Exactas de la Universidad Nacional de San Juan. Apasionado por el desarrollo de software, cuento con conocimientos en Python, C, Java, SQL y en distintos Frameworks. Busco oportunidades para aplicar y expandir mis habilidades en proyectos desafiantes.
+                    </p>
+                    <!-- Grid de tecnologías -->
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" 
+                                 alt="Python" 
+                                 class="w-10 h-10 mr-3"/>
+                            <span class="font-semibold">Python</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" 
+                                 alt="C" 
+                                 class="w-10 h-10 mr-3"/>
+                            <span class="font-semibold">C</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" 
+                                 alt="Java" 
+                                 class="w-10 h-10 mr-3"/>
+                            <span class="font-semibold">Java</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" 
+                                 alt="SQL" 
+                                 class="w-10 h-10 mr-3"/>
+                            <span class="font-semibold">SQL</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" 
+                                 alt="Node.js" 
+                                 class="w-10 h-10 mr-3"/>
+                            <span class="font-semibold">Node.js</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" 
+                                 alt="Spring" 
+                                 class="w-10 h-10 mr-3"/>
+                            <span class="font-semibold">Spring</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-12 bg-gray-200" id="projects">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4 slide-up">Proyectos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-container h-96">
+                    <div class="card-inner">
+                        <div class="card-front bg-white p-4 rounded-lg shadow-md">
+                            <img alt="API RESTful" class="w-full h-48 object-cover rounded-t-lg" src="https://storage.googleapis.com/a1aa/image/wLOuCfdbwaRjbarIKZZJfsZMwX2nF2CPtephYEeITY8TiOSPB.jpg"/>
+                            <h3 class="text-xl font-bold mt-4">Proyecto API RESTful</h3>
+                            <p class="mt-2">Node.js + Express + JWT</p>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="text-xl font-bold mb-4">API RESTful</h3>
+                            <p class="text-sm">
+                                Desarrollé una API RESTful completa utilizando Node.js y Express. 
+                                Implementé autenticación JWT para seguridad, documentación Swagger para facilitar el uso,
+                                y endpoints para CRUD completo. La API maneja validaciones, 
+                                middleware personalizado y está conectada a una base de datos MongoDB.
+                            </p>
+                            <div class="mt-4">
+                                <span class="bg-blue-700 text-white px-2 py-1 rounded-full text-sm">Node.js</span>
+                                <span class="bg-blue-700 text-white px-2 py-1 rounded-full text-sm">Express</span>
+                                <span class="bg-blue-700 text-white px-2 py-1 rounded-full text-sm">JWT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container h-96">
+                    <div class="card-inner">
+                        <div class="card-front bg-white p-4 rounded-lg shadow-md">
+                            <img alt="Sistema de Gestión" class="w-full h-48 object-cover rounded-t-lg" src="https://storage.googleapis.com/a1aa/image/rAlW9a7r78p0FJ8KGSf18E0fFPz5MOqCCKHUkNA8Ya8goj0TA.jpg"/>
+                            <h3 class="text-xl font-bold mt-4">Sistema de Gestión DB</h3>
+                            <p class="mt-2">Python + MySQL</p>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="text-xl font-bold mb-4">Sistema de Gestión</h3>
+                            <p class="text-sm">
+                                Sistema completo de gestión de base de datos con interfaz gráfica 
+                                desarrollada en Python. Permite realizar operaciones CRUD, 
+                                generar reportes y visualizar datos en tiempo real. 
+                                Implementa patrones de diseño y mejores prácticas de UI/UX.
+                            </p>
+                            <div class="mt-4">
+                                <span class="bg-blue-700 text-white px-2 py-1 rounded-full text-sm">Python</span>
+                                <span class="bg-blue-700 text-white px-2 py-1 rounded-full text-sm">MySQL</span>
+                                <span class="bg-blue-700 text-white px-2 py-1 rounded-full text-sm">GUI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Microservicio de Procesamiento de Datos -->
+    <div class="card-container h-96">
+        <div class="card-inner">
+            <div class="card-front bg-white p-4 rounded-lg shadow-md">
+                <img alt="Microservicio de Procesamiento" class="w-full h-48 object-cover rounded-t-lg" src="https://storage.googleapis.com/a1aa/image/VfofYDmtVeR1KJFOMkalXyOQUNXsTHsOn4nmlNeeiBfSI6I9E.jpg"/>
+                <h3 class="text-xl font-bold mt-4">Microservicio de Procesamiento de Datos</h3>
+                <p class="mt-2">Kafka + Spring Boot</p>
+            </div>
+            <div class="card-back">
+                <h3 class="text-xl font-bold mb-4">Microservicio de Procesamiento</h3>
+                <p class="text-sm">
+                    Implementación de un microservicio escalable para procesamiento de datos en tiempo real.
+                    Utiliza Apache Kafka para el manejo de eventos y Spring Boot para la lógica de negocio.
+                    Incluye balanceo de carga y manejo de fallos.
+                </p>
+                <div class="mt-4">
+                    <span class="bg-blue-700 text-white px-2 py-1 rounded-full text-sm">Kafka</span>
+                    <span class="bg-blue-700 text-white px-2 py-1 rounded-full text-sm">Spring Boot</span>
+                    <span class="bg-blue-700 text-white px-2 py-1 rounded-full text-sm">Java</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sistema de Autenticación -->
+    <div class="card-container h-96">
+        <div class="card-inner">
+            <div class="card-front bg-white p-4 rounded-lg shadow-md">
+                <img alt="Sistema de Autenticación" class="w-full h-48 object-cover rounded-t-lg" src="https://storage.googleapis.com/a1aa/image/IH4LVIAolwo7GNe9pY63U6ysVtgZHirzdre2YgQNHVrboj0TA.jpg"/>
+                <h3 class="text-xl font-bold mt-4">Sistema de Autenticación</h3>
+                <p class="mt-2">OAuth2 + OpenID Connect</p>
+            </div>
+            <div class="card-back">
+                <h3 class="text-xl font-bold mb-4">Sistema de Autenticación</h3>
+                <p class="text-sm">
+                    Sistema robusto de autenticación y autorización implementando OAuth2 y OpenID Connect.
+                    Soporta múltiples proveedores de identidad, roles personalizados y tokens JWT.
+                    Incluye panel de administración de usuarios.
+                </p>
+                <div class="mt-4">
+                    <span class="bg-blue-700 text-white px-2 py-1 rounded-full text-sm">OAuth2</span>
+                    <span class="bg-blue-700 text-white px-2 py-1 rounded-full text-sm">OpenID</span>
+                    <span class="bg-blue-700 text-white px-2 py-1 rounded-full text-sm">JWT</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Servicio de Mensajería -->
+    <div class="card-container h-96">
+        <div class="card-inner">
+            <div class="card-front bg-white p-4 rounded-lg shadow-md">
+                <img alt="Servicio de Mensajería" class="w-full h-48 object-cover rounded-t-lg" src="https://storage.googleapis.com/a1aa/image/WPWUd19prxJbC9ZO0AOn4New4J9b9DGGREOwmj1dMaqO0R6JA.jpg"/>
+                <h3 class="text-xl font-bold mt-4">Servicio de Mensajería Real-time</h3>
+                <p class="mt-2">WebSockets + Node.js</p>
+            </div>
+            <div class="card-back">
+                <h3 class="text-xl font-bold mb-4">Mensajería Real-time</h3>
+                <p class="text-sm">
+                    Plataforma de mensajería en tiempo real con WebSockets.
+                    Soporta salas de chat, mensajes privados y notificaciones push.
+                    Implementa reconexión automática y persistencia de mensajes.
+                </p>
+                <div class="mt-4">
+                    <span class="bg-blue-700 text-white px-2 py-1 rounded-full text-sm">WebSocket</span>
+                    <span class="bg-blue-700 text-white px-2 py-1 rounded-full text-sm">Node.js</span>
+                    <span class="bg-blue-700 text-white px-2 py-1 rounded-full text-sm">Socket.IO</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sistema de Monitoreo -->
+    <div class="card-container h-96">
+        <div class="card-inner">
+            <div class="card-front bg-white p-4 rounded-lg shadow-md">
+                <img alt="Sistema de Monitoreo" class="w-full h-48 object-cover rounded-t-lg" src="https://storage.googleapis.com/a1aa/image/i0oa4jOYQCJ1FNyRshIMeaROAaqDxo68GTteTgke2OGERHpnA.jpg"/>
+                <h3 class="text-xl font-bold mt-4">Sistema de Monitoreo</h3>
+                <p class="mt-2">Grafana + Prometheus</p>
+            </div>
+            <div class="card-back">
+                <h3 class="text-xl font-bold mb-4">Monitoreo y Alertas</h3>
+                <p class="text-sm">
+                    Sistema completo de monitoreo y alertas usando Grafana y Prometheus.
+                    Incluye dashboards personalizados, alertas configurables y métricas en tiempo real.
+                    Integración con sistemas de notificación.
+                </p>
+                <div class="mt-4">
+                    <span class="bg-blue-700 text-white px-2 py-1 rounded-full text-sm">Grafana</span>
+                    <span class="bg-blue-700 text-white px-2 py-1 rounded-full text-sm">Prometheus</span>
+                    <span class="bg-blue-700 text-white px-2 py-1 rounded-full text-sm">Docker</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+        <section class="py-12 bg-white fade-in" id="contact">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Contacto</h2>
+                
+                <!-- Información de contacto -->
+                <div class="flex justify-center space-x-8 mb-8">
+                    <a href="mailto:juancruzmora26@gmail.com" 
+                    class="flex items-center text-gray-700 hover:text-blue-600 transition-colors">
+                        <i class="fas fa-envelope text-2xl mr-2"></i>
+                        <span>juancruzmora26@gmail.com</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/juan-cruz-mora-9b8332233/" 
+                    target="_blank"
+                    class="flex items-center text-gray-700 hover:text-blue-600 transition-colors">
+                        <i class="fab fa-linkedin text-2xl mr-2"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+        
+                <!-- Formulario de contacto -->
+                <form action="https://formsubmit.co/juancruzmora26@gmail.com" method="POST" class="max-w-lg mx-auto">
+                    <!-- Redirección después del envío -->
+                    <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
+                    <!-- Asunto del mensaje -->
+                    <input type="hidden" name="_subject" value="Nuevo contacto desde Portfolio">
+                    <!-- Protección contra spam -->
+                    <input type="hidden" name="_captcha" value="false">
+        
+                    <div class="mb-4">
+                        <label class="block text-left text-gray-700" for="name">Nombre</label>
+                        <input class="w-full p-2 border border-gray-300 rounded-lg" 
+                            id="name" 
+                            name="name" 
+                            placeholder="Tu nombre" 
+                            type="text" 
+                            required/>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-left text-gray-700" for="email">Correo Electrónico</label>
+                        <input class="w-full p-2 border border-gray-300 rounded-lg" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Tu correo electrónico" 
+                            type="email" 
+                            required/>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-left text-gray-700" for="message">Mensaje</label>
+                        <textarea class="w-full p-2 border border-gray-300 rounded-lg" 
+                                id="message" 
+                                name="message" 
+                                placeholder="Tu mensaje" 
+                                rows="4" 
+                                required></textarea>
+                    </div>
+                    <button class="bg-blue-900 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition-colors" 
+                            type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+    <footer class="bg-blue-900 text-white p-4 fade-in">
+        <div class="container mx-auto text-center">
+            <p>© 2024 Todos los derechos reservados.</p>
+            <div class="flex justify-center space-x-4 mt-2">
+                <a class="hover:text-gray-400" href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                <a class="hover:text-gray-400" href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a class="hover:text-gray-400" href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
