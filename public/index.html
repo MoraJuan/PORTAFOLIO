@@ -415,6 +415,11 @@
                         <i class="fab fa-linkedin text-2xl mr-2"></i>
                         <span>LinkedIn</span>
                     </a>
+                    <a href="github.com/MoraJuan"
+                        tarjet="_blank"
+                        class="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                        <i class="fab fa-github text-2xl mr-2"></i>
+                        <span>GitHub</span>
                 </div>
 
                 <!-- Formulario de contacto -->
@@ -474,7 +479,7 @@
     <!-- JavaScript para alternar el modo oscuro -->
     <script>
         const themeToggle = document.getElementById('theme-toggle');
-
+    
         // Cargar el tema preferido desde localStorage
         if (localStorage.getItem('theme') === 'dark') {
             document.body.classList.add('dark');
@@ -482,7 +487,7 @@
         } else {
             themeToggle.textContent = '🌙';
         }
-
+    
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark');
             if (document.body.classList.contains('dark')) {
